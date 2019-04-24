@@ -1,5 +1,6 @@
 package com.athangzhou.config;
 
+import org.springframework.aop.framework.DefaultAopProxyFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 /*
