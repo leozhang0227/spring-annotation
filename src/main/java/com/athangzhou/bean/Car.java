@@ -3,12 +3,16 @@ package com.athangzhou.bean;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Car implements InitializingBean,DisposableBean{
+public class Car implements InitializingBean,DisposableBean, BeanFactoryAware,BeanNameAware{
 
 	@Override
 	public void destroy() throws Exception {
@@ -51,4 +55,19 @@ public class Car implements InitializingBean,DisposableBean{
 	{
 		System.out.println("@preDestory");
 	}
+
+
+	@Override
+	public void setBeanName(String name) {
+		System.out.println("【BeanNameAware接口】调用BeanNameAware.setBeanName()");		
+		
+	}
+
+
+	@Override
+	public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+		 System.out.println("【BeanFactoryAware接口】调用BeanFactoryAware.setBeanFactory()");
+		
+	}
+
 }

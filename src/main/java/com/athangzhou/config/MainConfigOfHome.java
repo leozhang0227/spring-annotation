@@ -9,10 +9,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 import com.athangzhou.bean.Car;
+import com.athangzhou.lifebean.Home;
 
 @Configuration
-@ComponentScan("com.athangzhou.bean,com.athangzhou.ext")
-public class MainConfigOfLifeCycle {
+@ComponentScan("com.athangzhou.lifebean")
+public class MainConfigOfHome {
 
 		/**
 		 *1 @bean 注解 指定初始化和销毁
@@ -28,7 +29,8 @@ public class MainConfigOfLifeCycle {
 	    
 	    //@Scope("prototype")
 	    @Bean(initMethod="init",destroyMethod="destory")
-		public Car car() {
-	    	return new Car();
+		public Home home() {
+	    	return new Home(4,"hangzhou");
+	    	
 		}
 }
