@@ -14,7 +14,7 @@ public class UserService {
 	public void insertUser() {
 		userDao.insert();
 		System.out.println("insert successful");
-		int i = 10/0;
+		int i = 10/1;
 	}
 
 }

@@ -2,6 +2,7 @@ package com.athangzhou.config;
 
 import org.springframework.aop.framework.DefaultAopProxyFactory;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 /*
  * AOP:指在程序运行期间动态地将某段代码切入指定的位置执行
@@ -29,7 +30,7 @@ import com.athangzhou.aop.introduction.EnableSellerAspect;
 import com.athangzhou.aop.introduction.NavieWaiter;
 import com.athangzhou.aop.introduction.SmartSeller;
 
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy(proxyTargetClass=true)
 @Configuration
 public class MainConfigOfAOPIntro {
 	

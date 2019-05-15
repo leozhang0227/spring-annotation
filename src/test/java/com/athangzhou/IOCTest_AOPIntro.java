@@ -5,6 +5,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.athangzhou.aop.MathCalculator;
 import com.athangzhou.aop.introduction.NavieWaiter;
+import com.athangzhou.aop.introduction.Seller;
+import com.athangzhou.aop.introduction.Waiter;
 import com.athangzhou.bean.Boss;
 import com.athangzhou.bean.Car;
 import com.athangzhou.config.MainConfigOfAOP;
@@ -21,8 +23,11 @@ public class IOCTest_AOPIntro {
 	@Test
 	public void test01() {
 		
-		NavieWaiter navieWaiter = applicationContext.getBean(NavieWaiter.class);
+		Waiter navieWaiter = (Waiter)applicationContext.getBean("navieWaiter");
 		navieWaiter.greetTo("Harry");
+		
+		Seller seller = (Seller) navieWaiter;
+		seller.seller("banana", "Jack");
 		
 	}
 
