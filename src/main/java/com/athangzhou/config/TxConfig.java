@@ -36,7 +36,7 @@ public class TxConfig implements EmbeddedValueResolverAware{
 		ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource();
 		comboPooledDataSource.setUser(user);
 		comboPooledDataSource.setPassword(pwd);
-		comboPooledDataSource.setJdbcUrl("jdbc:mysql://10.61.213.104:3306/sql_learning");
+		comboPooledDataSource.setJdbcUrl("jdbc:mysql://127.0.0.1:3306/sql_learning");
 		String driverClass = valueResolver.resolveStringValue("${db.driverClass}");
 		comboPooledDataSource.setDriverClass(driverClass);
 		return comboPooledDataSource;
